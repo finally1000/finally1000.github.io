@@ -189,7 +189,8 @@ function load() {
 
         var inputScreen = document.querySelectorAll('#screen');
         var showScore = document.querySelectorAll('#score_01,#score_02,#score_03,#score_04,#score_05');
-        var totalScore = document.querySelector('#hide_01');    
+        var totalScore = document.querySelector('#hide_01');  
+        var etfScore = document.querySelectorAll('#score_00');
         var stock_ary = myStock.get_stock_array();
         var etf_ary = myStock.get_etf_array();
         var sum = 0;
@@ -200,7 +201,7 @@ function load() {
         }
 
         for(var i=0; i< etf_ary.length; i++)
-            inputScreen[i+5].innerHTML = etf_ary[i];
+            etfScore[i].innerHTML = etf_ary[i];
 
         for(var i=0; i< showScore.length; i++){
 
@@ -211,7 +212,6 @@ function load() {
             showScore[i].innerHTML = Math.ceil(price);
         }
         totalScore.innerHTML = sum;
-
 
     }
 
